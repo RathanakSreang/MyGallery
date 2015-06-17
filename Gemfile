@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "carrierwave"
 gem "bootstrap-sass"
 gem "bootstrap-will_paginate", "0.0.9"
 gem "jquery-rails"
