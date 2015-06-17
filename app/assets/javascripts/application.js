@@ -13,7 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-// Loads all Semantic javascripts
 //= require bootstrap
-//= require semantic-ui
 //= require_tree .

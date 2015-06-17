@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :gelleries do
+  resources :galleries do
     resources :photos
   end
   get "static_pages/help"
