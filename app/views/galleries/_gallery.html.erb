@@ -1,9 +1,6 @@
-<td>
+<div class="col-md-3 col-sm-6 col-xs-12">
   <%= gallery.title %>
-</td>
-<td>
-  <%= link_to "Edit", edit_gallery_path(gallery) %>
-</td>
-<td>
-  <%= button_to "Delete", edit_gallery_path(gallery) %>
-</td>
+  <%= link_to gallery do %>
+    <img class="img-responsive" src="http://placehold.it/400x400" alt="">
+  <% end %>
+</div>
