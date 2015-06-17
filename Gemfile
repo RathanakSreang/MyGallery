@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-gem "semantic-ui-sass", github: "doabit/semantic-ui-sass"
 gem "bootstrap-sass"
 gem "bootstrap-will_paginate", "0.0.9"
 gem "jquery-rails"
