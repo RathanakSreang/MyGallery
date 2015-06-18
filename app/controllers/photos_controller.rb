@@ -17,6 +17,11 @@ class PhotosController < ApplicationController
   def create
     @gallery = Gallery.find params[:gallery_id]
     @photo = @gallery.photos.build photo_params
+    if @photo.save
+      redirect_to gallery_photo_path @gallery, @photo
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -37,7 +42,7 @@ class PhotosController < ApplicationController
   end
 
   def set_photo
-    gallery = Gallery.find params[:gallery_id]
-    @photo = gallery.photos.find params[:id]
+    @gallery = Gallery.find params[:gallery_id]
+    @photo = @gallery.photos.find params[:id]
   end
 end

@@ -3,4 +3,5 @@ class Photo < ActiveRecord::Base
   belongs_to :gallery
   mount_uploader :path, ImageUploader
   validates :name, :path, presence: true
+  default_scope { order("created_at DESC") } 
 end
