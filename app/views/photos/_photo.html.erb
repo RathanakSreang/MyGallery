@@ -1,0 +1,14 @@
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+  <div class="box">
+    <a href="images/big2.jpg" class="gall_item">
+      <%= image_tag photo.path.url(:thumb_photo) %>
+      <span></span>
+    </a>    
+    <span></span>
+    <div class="box_bot">
+      <div class="box_bot_title"><%= photo.name %></div>
+      <p><%= photo.description %></p>      
+      <%= link_to "more", gallery_photo_path(photo.gallery, photo), class: "btn" %>
+    </div>
+  </div>
+</div>

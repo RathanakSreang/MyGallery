@@ -15,3 +15,16 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(ready);
+$(document).on("page:load", ready);
+//$(document).on("page:update", ready);
+
+function ready(){
+  $(".shuffle-me").shuffleImages({
+         target: ".images > img"
+       });
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $("#stuck_container").tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+}
