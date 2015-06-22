@@ -1,0 +1,12 @@
+<center><h3>New Photo</h3></center>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for [:admin, @photo] do |f| %>
+      <%= render "admin/photos/photo_form", f: f %>
+      <div class="form-group">      
+        <%= f.submit "Create", class: "btn btn-primary" %>
+        <center><%= link_to "Back", admin_photos_path %></center>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<center><h3><u><%= @photo.name %></u></h3></center>
+<%= link_to "Back to photos", admin_photos_path %>
+<center><%= image_tag @photo.path.url %></center>
+<pre><%= @photo.description %></pre>
