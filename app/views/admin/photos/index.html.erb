@@ -1,0 +1,14 @@
+<%= link_to "New Photo", new_admin_photo_path, class: "btn btn-primary" %>
+<table class="table">
+  <thead>    
+    <th>Name</th>
+    <th>Description</th>
+    <th>Gallery</th>
+    <th>Link</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <%= render @photos %>
+  </tbody>
+  <%= will_paginate @photos %>
+</table>

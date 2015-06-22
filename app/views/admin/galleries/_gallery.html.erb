@@ -1,0 +1,6 @@
+<tr>  
+  <td><%= gallery.title %></td>
+  <td><%= link_to "Detail", admin_gallery_path(gallery) %></td>
+  <td><%= link_to "Edit", edit_admin_gallery_path(gallery) %> | 
+  <%= link_to "Delte", admin_gallery_path(gallery), method: :delete, data: {confirm: "Are you sure?"} %></td>
+</tr>

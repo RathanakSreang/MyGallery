@@ -1,0 +1,12 @@
+<%= link_to "New Gallery", new_admin_gallery_path, class: "btn btn-primary" %>
+<table class="table">
+  <thead>    
+    <th>Title</th>
+    <th>Link</th>
+    <th>Action</th>    
+  </thead>
+  <tbody>
+    <%= render @galleries %>
+  </tbody>
+  <%= will_paginate @galleries %>
+</table>

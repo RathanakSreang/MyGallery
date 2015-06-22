@@ -1,0 +1,17 @@
+<center><h3><u><%= @gallery.title %></u></h3></center>
+<%= link_to "Back to galleries", admin_galleries_path %>
+<br/>
+<%= link_to "Add photo", new_admin_photo_path %>
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Path</th>
+    <th>Link</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <%= render @photos %>
+  </tbody>
+  <%= will_paginate @photos %>
+</table>
