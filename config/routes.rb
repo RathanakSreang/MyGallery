@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   
+  devise_for :users
+  resources :users do
+    collection do
+      get :email_validate
+    end
+  end
   resources :galleries do
+    collection do
+      get :all_galleries
+    end
     resources :photos
   end
   namespace :admin do

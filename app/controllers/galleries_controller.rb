@@ -3,9 +3,18 @@ class GalleriesController < ApplicationController
   def show
     
   end
-
+  def all_galleries
+    render json: Gallery.all
+  end
   def index
-    @galleries = Gallery.all
+    #  @galleries = Gallery.all
+    respond_to do |format|
+      format.html do
+        # @galleries = Gallery.all
+      end
+    # format.html
+    format.json { render json: Gallery.all}
+    end
   end
 
   def new

@@ -1,5 +1,9 @@
 source "https://rubygems.org"
 
+gem "devise"
+gem "angular-rails-templates"
+gem "angularjs-rails"
+gem "bower-rails"
 gem "mini_magick"
 gem "carrierwave"
 gem "bootstrap-sass"
@@ -18,5 +22,6 @@ group :development, :test do
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "faker"
 end
 

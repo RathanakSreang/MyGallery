@@ -12,19 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap
-//= require_tree .
 
-$(document).ready(ready);
-$(document).on("page:load", ready);
+//= require bootstrap
+//= require angular
+//= require angular-route
+//= require angular-animate
+//= require_tree .
+$(document).on("ready page:load", ready);
 //$(document).on("page:update", ready);
 
-function ready(){
-  $(".shuffle-me").shuffleImages({
-         target: ".images > img"
-       });
-  $().UItoTop({ easingType: 'easeOutQuart' });
-  $("#stuck_container").tmStickUp({});
-  $('.gallery .gall_item').touchTouch();
+function ready(){  
 }
