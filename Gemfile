@@ -1,8 +1,7 @@
 source "https://rubygems.org"
 
 gem "devise"
-gem "angular-rails-templates"
-gem "angularjs-rails"
+# gem "angularjs-rails"
 gem "bower-rails"
 gem "mini_magick"
 gem "carrierwave"
@@ -25,3 +24,7 @@ group :development, :test do
   gem "faker"
 end
 
+gem "angular_rails_csrf"
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end

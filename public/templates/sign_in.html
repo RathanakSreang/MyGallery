@@ -1,0 +1,19 @@
+<div class="col-md-4 col-md-offset-4">
+  <form class="new_user" id="new_user" ng-submit="signIn()">
+    <div class="form-group">
+      <label for="user_email">Email</label><br>
+      <input autofocus="autofocus" class="form-control" type="email" value="" ng-model = "user.email" name="user[email]" id="user_email">
+    </div>
+
+    <div class="form-group">
+      <label for="user_password">Password</label><br>
+      <input autocomplete="off" class="form-control" type="password" name="user[password]" id="user_password" ng-model = "user.password">
+    </div>
+
+    <div class="actions">
+      <input type="submit" name="commit" value="Log in" class="btn btn-primary">
+    </div>
+
+    <a href="/users/sign_up">Sign Up Here</a>
+  </form>
+</div>

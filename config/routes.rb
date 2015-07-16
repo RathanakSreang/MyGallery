@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, controllers: { sessions: "sessions", registrations: "registrations" }
   resources :users do
     collection do
       get :email_validate
     end
   end
   resources :galleries do
-    collection do
-      get :all_galleries
-    end
     resources :photos
   end
   namespace :admin do
@@ -17,9 +14,9 @@ Rails.application.routes.draw do
     resources :pages
     resources :galleries
     resources :photos    
-  end
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/contact"
+  end  
+  get "help" => "static_pages#help"
+  get "about" => "static_pages#about"
+  get "contact" => "static_pages#contact"
   root "static_pages#home"
 end

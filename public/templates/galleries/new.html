@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 well">
+    <form class="new_user" name="myForm" ng-submit="create()">
+      <div class="form-group">
+        <label>Gallery Title</label><br>
+        <input autofocus="autofocus" class="form-control" type="text" value="" ng-model = "gallary.title" name="gallery.name" required>
+      </div>
+
+      <div class="actions">
+        <input type="submit" name="commit" value="Create Gallery" class="btn btn-primary" ng-disabled = "myForm.$invalid">
+      </div>
+    </form>    
+  </div>
+</div>

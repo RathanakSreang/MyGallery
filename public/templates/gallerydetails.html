@@ -1,0 +1,10 @@
+<center><h1>
+  {{gallery.title}}
+</h1></center>
+<div class="row">
+  <div class="col-md-3" ng-repeat="photo in photos" >    
+    <img ng-src="{{photo.path.url}}" alt="sssssssssssss">
+    {{photo.name}}
+  </div>
+</div>
+<!-- <pre>{{datas | json}}</pre> -->
