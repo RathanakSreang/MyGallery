@@ -3,13 +3,7 @@
     <%= gallery.title %>
     <%= link_to gallery do %>
       <div class="images">
-        <% if gallery.photos %>
-          <% gallery.photos.limit(3).each do |photo| %>
-            <%= image_tag photo.path.url, class: "img-responsive" %>
-          <% end %>
-        <% else %>
-          <img class="img-responsive" src="http://placehold.it/400x400" alt=""/>
-        <% end %>
+        <%= image_tag gallery.photos.first.path.url, class: "img-responsive" %>
       </div>      
     <% end %>
   </div>

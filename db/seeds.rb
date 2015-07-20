@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+10.times do
+  Gallery.create title: Faker::Name.name
+end
+Gallery.all.each do |gallery|
+  10.times do
+    gallery.photos.create name: Faker::Name.name, remote_path_url: Faker::Avatar.image
+  end
+end

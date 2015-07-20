@@ -12,19 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
+//= require angulars/lib/angular.min
+//= require angulars/lib/angular-resource.min
+//= require angular-devise/lib/devise
 //= require_tree .
-
-$(document).ready(ready);
-$(document).on("page:load", ready);
+$(document).on("ready page:load", ready);
 //$(document).on("page:update", ready);
 
-function ready(){
-  $(".shuffle-me").shuffleImages({
-         target: ".images > img"
-       });
-  $().UItoTop({ easingType: 'easeOutQuart' });
-  $("#stuck_container").tmStickUp({});
-  $('.gallery .gall_item').touchTouch();
+function ready(){  
 }
+
+$(document).on("page:load", function() {
+  return $("[ng-app]").each(function() {
+    var module;
+    module = $(this).attr("ng-app");
+    return angular.bootstrap(this, module);
+  });
+});

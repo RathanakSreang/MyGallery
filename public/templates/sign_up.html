@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Sign up</h2>    
+    <form class="new_user" id="new_user" ng-submit="signUp()" name = "myForm" ng-controller = "signUpController">
+      <div class="form-group">
+        <div class="input-group">          
+          <label class="input-group-addon" >Email</label>
+          <input autocomplete="off" class="form-control" type="email" name="user[email]" ng-model = "user.email" required unique-email = "user.email">
+
+          <div class="input-group-addon" ng-show="myForm['user[email]'].$dirty">            
+              <i class="fa fa-check" style="color:green" ng-show="myForm['user[email]'].$valid"></i>
+              <i class="fa fa-times" style="color:red" ng-show="myForm['user[email]'].$invalid"></i>            
+          </div>          
+        </div>
+        <!-- <pre>{{myForm['user[email]'] | json}}</pre> -->
+        <span style="color:red" ng-show="myForm['user[email]'].$dirty && myForm['user[email]'].$invalid">
+          <span ng-show="myForm['user[email]'].$error.required">Email is required.</span>
+          <span class="error" ng-show="myForm['user[email]'].$error.email">Not valid email!</span>
+          <span ng-show="myForm['user[email]'].$error.uniqueEmail">Email is already exist.</span>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">          
+          <label class="input-group-addon" >Password</label>
+          <input autocomplete="off" class="form-control" type="password" name="user[password]" ng-model = "user.password" required  ng-maxlength = "20" ng-minlength = "5" ng-change = "resetpassconfirm()">
+
+          <div class="input-group-addon" ng-show="myForm['user[password]'].$dirty || myForm['user[password]'].$touched">
+            <!-- <pre>{{myForm | json}}</pre> -->            
+              <i class="fa fa-check" style="color:green" ng-show="myForm['user[password]'].$valid"></i>
+              <i class="fa fa-times" style="color:red" ng-show="myForm['user[password]'].$invalid"></i>            
+          </div>
+        </div>        
+        <span style="color:red" ng-show="(myForm['user[password]'].$dirty || myForm['user[password]'].$touched) && myForm['user[password]'].$invalid">
+          <span ng-show="myForm['user[password]'].$error.required">Password is required.</span>
+          <span ng-show="myForm['user[password]'].$error.minlength">Password is too sort.</span>
+          <span ng-show="myForm['user[password]'].$error.maxlength">Password is too long.</span>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">          
+          <label class="input-group-addon">Password Confirmation</label>
+          <input autocomplete="off" class="form-control" type="password" name="user[password_confirmation]" ng-model = "user.password_confirmation" required confirm = "{{user.password}}" >
+          <div class="input-group-addon" ng-show="myForm['user[password_confirmation]'].$dirty || myForm['user[password_confirmation]'].$touched">
+              <i class="fa fa-check" style="color:green" ng-show="myForm['user[password_confirmation]'].$valid"></i>
+              <i class="fa fa-times" style="color:red" ng-show="myForm['user[password_confirmation]'].$invalid"></i>            
+          </div>
+        </div>
+        <!-- <pre>{{myForm['user[password_confirmation]'] | json}}</pre> -->
+        <span style="color:red" ng-show="(myForm['user[password_confirmation]'].$dirty || myForm['user[password_confirmation]'].$touched) && myForm['user[password_confirmation]'].$invalid">
+          <span ng-show="myForm['user[password_confirmation]'].$error.required">Password is required.</span>          
+          <span ng-show="myForm['user[password_confirmation]'].$error.confirm">Password Confirm is Not match.</span>
+        </span>        
+      </div>
+
+      <div class="actions">
+        <input type="submit" name="commit" value="Log in" class="btn btn-primary" ng-model = "button" ng-disabled = "myForm.$invalid">
+      </div>    
+  </div>
+</div>

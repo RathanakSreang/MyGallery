@@ -271,3 +271,28 @@
     color: $state-danger-text;
   }
 }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 100%;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: inherit;
+  border: 0px;
+  border-radius: 4px;
+}
+
+input.ng-dirty.ng-invalid {  
+  border: 1px solid red;
+}
+input.ng-dirty.ng-valid {
+  border: 1px solid green;
+}
+
+.footer {
+  min-height: 300px;
+}

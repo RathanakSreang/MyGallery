@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ImageApp">
   <head>
     <title> </title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -8,18 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= render "layouts/shim" %>
+    
+    <base href="/">
   </head>
   <body>
     <%=render "layouts/header" %>
     <section id="content"><div class="ic"></div>
       <div class="container">
-        <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <% flash.each do |key, value| %>          
+          <%= content_tag(:div, value, class: "alert alert-#{(key == "danger")? "danger" : "success"}") %>
         <% end %>    
-        <%= yield %>
-
-      <%#= render "layouts/footer" %>
+        <%#= yield %>
+        <div ng-view></div>
       </div>
     </section>
+    <%= render "layouts/footer" %>
   </body>
 </html>

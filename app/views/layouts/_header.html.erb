@@ -8,7 +8,7 @@
         </div>
     </div>
   </div>  
-  <div class="navbar navbar-inverse" id="stuck_container">
+  <div class="navbar navbar-inverse" id="stuck_container" ng-controller="NavController">
     <div class="container">      
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collape-menu">
@@ -25,9 +25,12 @@
         <ul class="nav navbar-nav sf-menu navbar-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Gallery", galleries_path %></li>          
-          <li><%= link_to "Contact", "#" %></li>
-          <li><%= link_to "About", "#" %></li>
-          <li><%= link_to "Help", "#" %></li>        
+          <li><%= link_to "Contact", contact_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Help", help_path %></li>          
+          <li><%#= link_to current_user.email, current_user %></li>          
+          <li ng-show="signIn()"><%= link_to "Sign out", destroy_user_session_path, "ng-click" => "logout()" %></li>
+          <li ng-hide="signIn()"><%= link_to "Sign in", user_session_path %></li>
         </ul>
       </div>    
     </div>
