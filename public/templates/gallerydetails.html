@@ -13,19 +13,90 @@
         <div class="form-group">
           <label>Image File</label><br>
 
-          <input id="userUpload" class="form-control" ng-model="photo.path" valid-image name="photo.path" type="file" accept="" />
+          <input id="photoUpload" class="form-control" name="photo.path" type="file" ng-model="photo.path" files-model="photo.path" onchange="angular.element(this).scope().test(this)" />
+          <!-- {{ photo.path }} -->
         </div>
-        <pre>{{myCreateForm.path | json}}</pre>
+
+        <div class="form-group">
+          <label>Description</label><br>
+          <textarea class="form-control" rows= "5" ng-model = "photo.description" name="photo.description"></textarea>
+        </div>
+        <!-- <pre>{{myCreateForm.path | json}}</pre> -->
         <div class="actions">
           <input type="submit" name="commit" value="Add Photos" class="btn btn-primary" ng-disabled = "myCreateForm.$invalid">
         </div>
       </form>
+
+      <form name="myUpdateForm" ng-submit="update()" ng-show="edit">
+        <div class="form-group">
+          <label>Phots Name</label><br>
+          <input autofocus="autofocus" class="form-control" type="text" ng-model = "photo.name" name="photo.name" required>
+        </div>
+        <div class="form-group">
+          <label>Image File</label><br>
+
+          <input id="photoUpload" class="form-control" name="photo.path" type="file" ng-model="photo.path" files-model="photo.path" onchange="angular.element(this).scope().test(this)" />
+          <!-- {{ photo.path }} -->
+        </div>
+
+        <div class="form-group">
+          <label>Description</label><br>
+          <textarea class="form-control" rows= "5" ng-model = "photo.description" name="photo.description"></textarea>
+        </div>
+        <!-- <pre>{{myUpdateForm.path | json}}</pre> -->
+        <div class="actions">
+          <input type="submit" name="commit" value="Upddate Photos" class="btn btn-primary" ng-disabled = "myUpdateForm.$invalid">
+          <a href="" ng-click="cancel()">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="photos">
+    <div class="col-md-3 photo" ng-repeat="photo in photos">
+
+      <button ng-click="show(photo)" type="button" class="" data-toggle="modal" data-target=".bs-example-modal-lg">
+        <img ng-src="{{photo.path.thumb.url}}" alt="{{photo.name}}", class="img-responsive">
+      </button>    
+        
+      <!-- </a> -->
+      <!-- {{photo.name}} -->
+      <a href="" style="color:red" ng-click="deletephoto(photo.id)"><i class="fa fa-times pull-right"></i></a>
+      <a href="" style="color:blue" ng-click="editphoto(photo)"><i class="fa fa-pencil-square-o pull-right"></i></a>    
+      <!-- <p>{{photo.description}}</p> -->
+      <pre>
+        <!-- {{photo.path}} -->
+      </pre>
+    </div>    
+  </div>
+</div>
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="thumbnail">
+          <img ng-src="{{show_photo.path.large.url}}" alt="{{show_photo.name}}", class="img-responsive">
+          <div class="caption">
+            <center>
+              <h3>{{show_photo.name}}</h3>
+              <p>{{show_photo.description}}</p>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <center>          
+          <button type="button" class="btn btn-primary" ng-click="previous(show_photo)"><i class="fa fa-arrow-left"></i></button>
+          <button type="button" class="btn btn-primary" ng-click="next(show_photo)"><i class="fa fa-arrow-right"></i></button>
+        </center>
+      </div>
     </div>
   </div>
 
-  <div class="col-md-3" ng-repeat="photo in photos" >    
-    <img ng-src="{{photo.path.url}}" alt="sssssssssssss">
-    {{photo.name}}
+<div class="row">
+  <div class="col-md-12">
+    <div file-upload="onFile(files)">
+      KKKKKKKKK
+    </div>
   </div>
 </div>
-<pre>{{datas | json}}</pre>
+<pre>{{photos | json}}</pre>

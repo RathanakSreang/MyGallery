@@ -45,7 +45,7 @@ describe('Service Gallery', function(){
   });
 
   describe('function create', function(){
-    it('should save and add one more colomn', inject(function($httpBackend){
+    it('should save and add one more row', inject(function($httpBackend){
       $httpBackend.whenPOST("/galleries.json").respond(200,
         {
           "id": 134,

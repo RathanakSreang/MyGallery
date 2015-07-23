@@ -16,7 +16,7 @@ describe('SignUpController', function(){
     scope.signUp();
     scope.$digest();
     expect(scope.user.email).toBe("abck@hhh.com");
-    expect($location.path).toBe("/galleries");
+    expect($location.path()).toBe("/galleries");
   }));
 
   it('should stay on same url after sign fail', inject(function($q, $location){
@@ -28,7 +28,7 @@ describe('SignUpController', function(){
     scope.signUp();
     scope.$digest();
     expect(scope.errors.error).toBe("Something go wrong!");
-    expect($location.path).toBe("/users/sign_up");
+    expect($location.path()).toBe("/users/sign_up");
   }));
   it('should scope.user be define', function(){
     expect(scope.user.email).toBeDefined();
