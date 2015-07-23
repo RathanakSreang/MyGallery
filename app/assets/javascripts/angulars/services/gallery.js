@@ -3,14 +3,14 @@ angular.module("ImageApp").factory("Gallery", ["$http", function ($http) {
     gallery_datas: []
   };
   gallery_obj.getAll = function(){
-    console.log("I in Heeeeeeee");
-    return $http.get("galleries.json").success(function(data){      
+    // console.log("I in Heeeeeeee");
+    return $http.get("/galleries.json").success(function(data){      
       angular.copy(data, gallery_obj.gallery_datas);
     });
   }
   gallery_obj.create = function(value){    
     return $http.post("/galleries.json", value).success(function(data){
-      console.log(data.errors);
+      // console.log(data.errors);
       if(!data.errors){
         gallery_obj.gallery_datas.unshift(data);
       }

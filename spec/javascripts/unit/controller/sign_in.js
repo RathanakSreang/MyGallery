@@ -1,11 +1,11 @@
-describe('signInController', function(){
+describe('SignInController', function(){
 
   var scope, signinControler, auth;
   beforeEach(module("ImageApp"));
   beforeEach(inject(function($controller, $rootScope, Auth){
     scope = $rootScope.$new();
     auth = Auth;
-    controller = $controller("signInController", {$scope: scope, Auth: auth});
+    controller = $controller("SignInController", {$scope: scope, Auth: auth});
   }));
 
   it('should have scope.user define', function(){
@@ -24,7 +24,7 @@ describe('signInController', function(){
     scope.signIn();
     scope.$digest();    
     expect(scope.user.email).toBe("abcd@efgh.lk");
-    expect($location.path).toBe("/galleries");
+    expect($location.path()).toBe("/galleries");
   }));
 
   it('should staay on same route url and scope.error contain value if sign in fail', inject(function($q, $location){
@@ -37,6 +37,6 @@ describe('signInController', function(){
     scope.$digest();  
     expect(scope.errors.error).toBe("Some thing wrong");
     // console.log($location.path);
-    expect($location.path).toBe("/users/sign_in");
+    expect($location.path()).toBe("/users/sign_in");
   }));
 });

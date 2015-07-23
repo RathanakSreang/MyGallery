@@ -38,7 +38,7 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit :id, :name, :path, :description
+    params.require(:photo).permit :id, :name, :path, :remote_path_url, :description
   end
 
   def set_photo

@@ -2,8 +2,8 @@ angular.module("ImageApp").controller("NavController", ["$location", "$scope", "
  // $http.get("").success(function(data){
  //  $scope.galleries =data;
  // });
-  // Auth.currentUser().then(function(user){    
-  // });  
+  Auth.currentUser().then(function(user){    
+  });  
   $scope.signIn = Auth.isAuthenticated;
   $scope.logout = Auth.logout;
   // window.location.reload();

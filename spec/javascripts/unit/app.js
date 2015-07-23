@@ -121,7 +121,7 @@ describe('Route Test', function(){
     it('should load sign_in.html when successfull load /users/sign_in', function(){
       location.path('/users/sign_in');
       rootScope.$digest();
-      expect(route.current.controller).toBe('signInController');
+      expect(route.current.controller).toBe('SignInController');
     });
   });
 
@@ -133,7 +133,7 @@ describe('Route Test', function(){
     it('should load sign_up.html when successfull load /users/sign_up', function(){
       location.path('/users/sign_up');
       rootScope.$digest();
-      expect(route.current.controller).toBe('signUpController');
+      expect(route.current.controller).toBe('SignUpController');
     });
   });
 

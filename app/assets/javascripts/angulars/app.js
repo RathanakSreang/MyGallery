@@ -39,11 +39,11 @@ myApp.config(function($routeProvider, $locationProvider){
   })
   .when("/users/sign_in", {
     templateUrl: "templates/sign_in.html",
-    controller: "signInController"
+    controller: "SignInController"
   })
   .when("/users/sign_up", {
     templateUrl: "templates/sign_up.html",
-    controller: "signUpController"
+    controller: "SignUpController"
   })
   .otherwise({ redirectTo: '/' });  
 });
