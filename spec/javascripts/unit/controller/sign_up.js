@@ -1,10 +1,10 @@
-describe('signUpController', function(){
+describe('SignUpController', function(){
   var scope, controller, auth;
   beforeEach(module("ImageApp"));
   beforeEach(inject(function($controller, $rootScope, Auth){
     auth = Auth;
     scope = $rootScope.$new();    
-    controller =  $controller("signUpController", {$scope: scope, Auth: auth}); 
+    controller =  $controller("SignUpController", {$scope: scope, Auth: auth}); 
   }));
 
   it('should route to /galeries after sign success', inject(function($q, $location){

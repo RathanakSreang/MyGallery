@@ -1,10 +1,31 @@
 <center><h1>
   {{gallery.title}}
+  <some-directive></some-directive>
 </h1></center>
 <div class="row">
+  <div class="col-md-12">
+    <div class="col-md-4 col-md-offset-4 well">
+      <form name="myCreateForm" ng-submit="create()" ng-hide="edit">
+        <div class="form-group">
+          <label>Phots Name</label><br>
+          <input autofocus="autofocus" class="form-control" type="text" ng-model = "photo.name" name="photo.name" required>
+        </div>
+        <div class="form-group">
+          <label>Image File</label><br>
+
+          <input id="userUpload" class="form-control" ng-model="photo.path" valid-image name="photo.path" type="file" accept="" />
+        </div>
+        <pre>{{myCreateForm.path | json}}</pre>
+        <div class="actions">
+          <input type="submit" name="commit" value="Add Photos" class="btn btn-primary" ng-disabled = "myCreateForm.$invalid">
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div class="col-md-3" ng-repeat="photo in photos" >    
     <img ng-src="{{photo.path.url}}" alt="sssssssssssss">
     {{photo.name}}
   </div>
 </div>
-<!-- <pre>{{datas | json}}</pre> -->
+<pre>{{datas | json}}</pre>

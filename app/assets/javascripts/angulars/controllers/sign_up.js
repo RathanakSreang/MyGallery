@@ -1,4 +1,4 @@
-angular.module("ImageApp").controller("signUpController", ["$location", "$scope", "Auth", function ($location, $scope, Auth) {
+angular.module("ImageApp").controller("SignUpController", ["$location", "$scope", "Auth", function ($location, $scope, Auth) {
   $scope.user = {
     email: "",
     name: "",
