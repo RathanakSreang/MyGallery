@@ -10,10 +10,10 @@ angular.module("ImageApp").controller("SignUpController", ["$location", "$scope"
   $scope.signUp = function(){    
     Auth.register($scope.user).then(function(user){      
       $scope.user = user;      
-      $location.path = "/galleries";
+      $location.path("/galleries");
     }, function(error){      
       $scope.errors = error;
-      $location.path = "/users/sign_up";
+      $location.path("/users/sign_up");
     });    
   };
 }]);

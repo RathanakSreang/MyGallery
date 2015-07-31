@@ -18,8 +18,9 @@
         <% flash.each do |key, value| %>          
           <%= content_tag(:div, value, class: "alert alert-#{(key == "danger")? "danger" : "success"}") %>
         <% end %>    
-        <%#= yield %>
-        <div ng-view></div>
+      <div class="view-container">
+        <div ng-view class="view-frame"></div>
+      </div>
       </div>
     </section>
     <%= render "layouts/footer" %>

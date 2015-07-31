@@ -1,4 +1,4 @@
-myApp = angular.module("ImageApp", ["ngAnimate", "ngRoute", "ngResource", "Devise"]);
+myApp = angular.module("ImageApp", ["ngAnimate","ngRoute", "ngResource", "Devise"]);
 // myApp.config(['$httpProvider', function ($httpProvider) {
 //   var authToken = $("meta[name=\"csrf-token\"]").attr("content");
 //   return $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;

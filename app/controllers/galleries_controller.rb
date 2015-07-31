@@ -7,7 +7,7 @@ class GalleriesController < ApplicationController
         # @galleries = Gallery.all
       end
     # format.html
-    format.json { render json: [gallery: @gallery, :photos => @gallery.photos]}
+    format.json { render json: @gallery}
     end
   end
 

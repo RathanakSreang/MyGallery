@@ -296,3 +296,13 @@ input.ng-dirty.ng-valid {
 .footer {
   min-height: 300px;
 }
+
+
+.photos div:hover {
+  background: #FDF6E3;
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}

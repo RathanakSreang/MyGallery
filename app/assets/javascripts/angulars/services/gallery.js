@@ -39,9 +39,12 @@ angular.module("ImageApp").factory("Gallery", ["$http", function ($http) {
       angular.copy(new_arr, gallery_obj.gallery_datas);
     });
   }
-  // gallery_obj.show =function(galleryId){
-  //   return $http.get("galleries/" + galleryId + ".json");
-  // }
+
+  gallery_obj.show = function(id){
+    return $http.get("galleries/" + id + ".json").success(function(data){
+      // console.log(data)      
+    });
+  }
 
   return gallery_obj;
 }]);

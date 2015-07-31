@@ -25,6 +25,7 @@ group :development, :test do
 end
 
 gem "angular_rails_csrf"
+gem "angularjs-file-upload-rails", "~> 1.1.6"
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end

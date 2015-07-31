@@ -1,0 +1,9 @@
+<form name="myCreateForm">
+  <div class="form-group">
+    <label>Gallery Title</label><br>
+    <input autofocus="autofocus" class="form-control" type="text" ng-model = "gallery.title" name="gallery.title" required>
+  </div>        
+  <div class="actions">
+    <input type="submit" name="commit" value="Create Gallery" class="btn btn-primary" ng-disabled = "myCreateForm.$invalid">
+  </div>
+</form>
